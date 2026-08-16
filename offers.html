@@ -3,242 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RewardVexa | Sponsored Partner Access</title>
-
+<title>Partner Hub &amp; Exclusive Vaults — Aura Journal</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
 
-*, *::before, *::after { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #0f131a;
-  color: #f0f6fc;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+:root{ 
+  --bg:#ffffff; 
+  --card:#f9f9fb; 
+  --card-hover:#f2f3f7; 
+  --text:#111111; 
+  --muted:#555555; 
+  --accent:#8a6522; 
+  --border:#e5e5e5; 
+  --max:1050px; 
 }
 
-.brand-header {
-  max-width: 480px;
-  width: 100%;
-  margin: 20px auto 5px;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+*, *::before, *::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; padding:0; width:100%; min-width:0; overflow-x:hidden;
+  background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans',Arial,sans-serif; line-height:1.7;
 }
-.brand-logo { 
-  font-family: 'Playfair Display', Georgia, serif; 
-  font-size: 22px; 
-  font-weight: 700; 
-  color: #f0f6fc; 
-  text-decoration: none; 
-}
-.brand-logo span { color: #d29922; }
+a{ color:inherit; text-decoration:none; }
+button, a{ -webkit-tap-highlight-color:transparent; }
 
-.badge { 
-  background: rgba(210, 153, 34, 0.1); 
-  color: #d29922; 
-  font-size: 11px; 
-  font-weight: 700; 
-  padding: 4px 10px; 
-  border-radius: 20px; 
-  border: 1px solid rgba(210, 153, 34, 0.2); 
+/* Main Content Container */
+.container{
+  width:100%; max-width:var(--max); margin:0 auto; padding:50px 20px 70px;
 }
 
-/* TOP REDIRECT BAR FOR QUOTES */
-.top-notice-bar {
-  max-width: 480px;
-  margin: 10px auto 0;
-  width: calc(100% - 32px);
-  background: #161b22;
-  border: 1px solid #30363d;
-  padding: 10px 14px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* Page Header / Intro */
+.offer-hero{
+  text-align:center; max-width:700px; margin:0 auto 50px;
 }
-.notice-text { font-size: 12px; font-weight: 600; color: #9aa4af; }
-.universal-btn {
-  background: #1b212b;
-  color: #d29922;
-  border: 1px solid rgba(210, 153, 34, 0.3);
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 7px 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-  transition: background 0.2s;
+.offer-tag{
+  color:var(--accent); font-size:11px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:14px; display:inline-block;
+  background:rgba(138, 101, 34, 0.08); padding:6px 16px; border-radius:20px;
+  border:1px solid rgba(138, 101, 34, 0.2);
 }
-.universal-btn:hover { background: rgba(210, 153, 34, 0.1); }
-
-.offer-wrapper {
-  max-width: 480px;
-  width: calc(100% - 32px);
-  margin: 15px auto 25px;
-  flex-grow: 1;
+.offer-hero h1{
+  font-family:'Playfair Display',Georgia,serif; font-size:clamp(32px, 5vw, 44px);
+  line-height:1.2; margin:0 0 16px; color:var(--text);
+}
+.offer-hero p{
+  color:var(--muted); font-size:clamp(15px, 2vw, 17px); line-height:1.65; margin:0;
 }
 
-.offer-card {
-  background: #161b22;
-  padding: 28px 24px;
-  border-radius: 20px;
-  border: 1px solid #30363d;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  text-align: center;
+/* Offers Grid Layout */
+.offers-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:24px; margin-bottom:50px;
+}
+.offer-card{
+  background:var(--card); border:1px solid var(--border); border-radius:18px;
+  padding:32px; transition:transform 0.25s ease, box-shadow 0.25s ease;
+  display:flex; flex-direction:column; justify-content:space-between;
+  box-shadow:0 2px 10px rgba(0,0,0,0.02); position:relative; overflow:hidden;
+}
+.offer-card:hover{
+  transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.06); border-color:#d0d0d0;
+}
+.badge{
+  position:absolute; top:20px; right:20px; background:rgba(138, 101, 34, 0.1);
+  color:var(--accent); font-size:11px; font-weight:700; padding:4px 10px; border-radius:6px;
+  letter-spacing:0.5px;
+}
+.offer-card-category{
+  font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;
+}
+.offer-card h3{
+  font-family:'Playfair Display',Georgia,serif; font-size:20px; color:var(--text); margin:0 0 12px; line-height:1.35;
+}
+.offer-card p{
+  color:var(--muted); font-size:14px; margin:0 0 24px; line-height:1.6;
+}
+.cta-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:var(--text); color:#ffffff; font-weight:700; font-size:13.5px;
+  padding:12px 20px; border-radius:10px; transition:background 0.2s, transform 0.2s;
+  text-align:center;
+}
+.cta-btn:hover{
+  background:var(--accent); transform:translateY(-2px);
 }
 
-/* COMPLIANT STATUS BADGE */
-.status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(210, 153, 34, 0.1);
-  color: #d29922;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(210, 153, 34, 0.2);
-  margin-bottom: 12px;
+/* Responsive adjustments */
+@media(max-width:650px){
+  .container{ padding:35px 16px 50px; }
+  .offer-card{ padding:24px; }
 }
-
-.card-title { 
-  font-family: 'Playfair Display', Georgia, serif; 
-  font-size: 24px; 
-  font-weight: 700; 
-  color: #f0f6fc; 
-  margin: 0 0 10px; 
-}
-.card-sub { font-size: 13px; color: #9aa4af; margin: 0 0 20px; line-height: 1.5; }
-
-.info-box {
-  background: #0f131a;
-  border: 1px solid #30363d;
-  border-radius: 12px;
-  padding: 14px;
-  text-align: left;
-  margin-bottom: 24px;
-}
-.info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 12px;
-  color: #c9d1d9;
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-.info-item:last-child { margin-bottom: 0; }
-.info-bullet {
-  color: #d29922;
-  font-weight: 800;
-  font-size: 14px;
-}
-
-/* CLEAN CTA BUTTON */
-.cpa-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 16px;
-  background: #d29922;
-  color: #0f131a;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(210, 153, 34, 0.3);
-  transition: transform 0.2s, opacity 0.2s;
-}
-.cpa-btn:hover { opacity: 0.92; transform: translateY(-1px); }
-
-.notice-box {
-  font-size: 11px;
-  color: #8b949e;
-  margin-top: 16px;
-  line-height: 1.4;
-}
-
-footer { text-align: center; padding: 20px 16px; font-size: 12px; color: #8b949e; border-top: 1px solid #161b22; }
-.footer-links { margin-bottom: 8px; }
-.footer-links a { color: #8b949e; text-decoration: none; margin: 0 6px; transition: color 0.2s; }
-.footer-links a:hover { color: #d29922; }
-.disclaimer-text { max-width: 480px; margin: 10px auto 0; font-size: 10px; color: #6e7681; line-height: 1.4; }
 </style>
 </head>
 <body>
 
-  <!-- Brand Header -->
-  <header class="brand-header">
-    <a href="index.html" class="brand-logo">Aura Journal<span>.</span></a>
-    <span class="badge">Partner Offers</span>
-  </header>
+  <!-- Header Placeholder -->
+  <div id="header-container"></div>
 
-  <!-- Universal Quotes Bar -->
-  <div class="top-notice-bar">
-    <span class="notice-text">Looking for daily mindset quotes?</span>
-    <a href="quotes.html" class="universal-btn">Explore Quotes →</a>
-  </div>
-
-  <!-- Main Card -->
-  <main class="offer-wrapper">
-    <div class="offer-card">
-
-      <div class="status-chip">
-        Sponsored Promotion Hub
-      </div>
-
-      <h1 class="card-title">Featured Advertiser Deals</h1>
-      <p class="card-sub">Access top partner promotions and deals available for your region below.</p>
-
-      <div class="info-box">
-        <div class="info-item">
-          <span class="info-bullet">•</span>
-          <span>Click the button below to view current partner deals.</span>
-        </div>
-        <div class="info-item">
-          <span class="info-bullet">•</span>
-          <span>Complete required sponsor tasks to qualify.</span>
-        </div>
-        <div class="info-item">
-          <span class="info-bullet">•</span>
-          <span>Available for eligible users in US, UK, AU & CA.</span>
-        </div>
-      </div>
-
-      <!-- Direct CPA Link -->
-      <a href="https://linkthem.net/aff_c?offer_id=1846&aff_id=2281" class="cap-btn cpa-btn" target="_blank" rel="noopener">
-        <span>Proceed to Advertiser Offer</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
-
-      <div class="notice-box">
-        Notice: You are navigating to a third-party sponsor page. Participation terms are set directly by advertiser networks.
-      </div>
-
+  <!-- Main Offer Content -->
+  <main class="container">
+    
+    <div class="offer-hero">
+      <span class="offer-tag">Verified Resource Vaults</span>
+      <h1>Exclusive Partner Hub &amp; Curated Offers</h1>
+      <p>Discover hand-picked digital toolkits, premium multi-niche assets, and partner sponsor portals designed to elevate your creative workflows.</p>
     </div>
+
+    <div class="offers-grid">
+      <!-- Offer 1 -->
+      <div class="offer-card">
+        <span class="badge">Popular</span>
+        <div>
+          <div class="offer-card-category">Digital Toolkit</div>
+          <h3>Aesthetic Media &amp; Preset Bundle</h3>
+          <p>Instant access to over 500+ high-resolution minimalist visual assets, typography scales, and content layouts.</p>
+        </div>
+        <a href="#" class="cta-btn">Claim Access Vault →</a>
+      </div>
+
+      <!-- Offer 2 -->
+      <div class="offer-card">
+        <span class="badge">Verified</span>
+        <div>
+          <div class="offer-card-category">Creator Resource</div>
+          <h3>Intentional Living Planner Suite</h3>
+          <p>A comprehensive multi-pillar tracking toolkit tailored for editorial curators, lifestyle bloggers, and independent publishers.</p>
+        </div>
+        <a href="#" class="cta-btn">Explore Toolkit →</a>
+      </div>
+
+      <!-- Offer 3 -->
+      <div class="offer-card">
+        <span class="badge">Partner Perk</span>
+        <div>
+          <div class="offer-card-category">Growth Portal</div>
+          <h3>High-Engagement Content Frameworks</h3>
+          <p>Step-by-step documentation and routing templates optimized for multi-niche organic reach and digital curation.</p>
+        </div>
+        <a href="#" class="cta-btn">Unlock Resources →</a>
+      </div>
+    </div>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <nav class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Disclaimer</a>
-      <a href="#">Contact Us</a>
-    </nav>
-    <p>© 2026 Aura Journal. All rights reserved.</p>
-    <p class="disclaimer-text">
-      Disclaimer: Aura Journal is an independent referral portal. We are not directly affiliated with, sponsored by, or endorsed by any third-party brand featured in advertiser offers.
-    </p>
-  </footer>
+  <!-- Footer Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- Script to load common Header and Footer -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data; });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => { document.getElementById('footer-container').innerHTML = data; });
+  </script>
 
 </body>
 </html>
