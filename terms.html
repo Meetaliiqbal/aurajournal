@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Terms of Service — Aura Journal</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+:root{
+  --bg:#fcfcfc;
+  --surface:#ffffff;
+  --text:#121212;
+  --muted:#666666;
+  --accent:#8a6522;
+  --border:#eaeaea;
+  --max:800px;
+}
+
+*, *::before, *::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; padding:0; width:100%; background:var(--bg); color:var(--text);
+  font-family:'Plus Jakarta Sans',sans-serif; line-height:1.8;
+}
+
+/* Page Container */
+.legal-container{
+  width:100%; max-width:var(--max); margin:0 auto; padding:60px 20px 90px;
+}
+.legal-header{
+  text-align:center; margin-bottom:45px;
+  border-bottom:1px solid var(--border); padding-bottom:30px;
+}
+.legal-tag{
+  color:var(--accent); font-size:11.5px; font-weight:700; letter-spacing:2.5px;
+  text-transform:uppercase; margin-bottom:12px; display:inline-block;
+  background:rgba(138, 101, 34, 0.08); padding:5px 14px; border-radius:20px;
+  border:1px solid rgba(138, 101, 34, 0.2);
+}
+.legal-header h1{
+  font-family:'Playfair Display',serif; font-size:clamp(32px, 5vw, 42px);
+  font-weight:700; margin:0 0 10px; color:var(--text);
+}
+.legal-header p{
+  color:var(--muted); font-size:14px; margin:0;
+}
+
+/* Content Styling */
+.legal-content h2{
+  font-family:'Playfair Display',serif; font-size:22px; color:var(--text);
+  margin:36px 0 14px; font-weight:600;
+}
+.legal-content p{
+  color:var(--muted); font-size:15px; margin:0 0 20px; line-height:1.75;
+}
+.legal-content ul{
+  color:var(--muted); font-size:15px; margin:0 0 20px 20px; padding:0;
+}
+.legal-content li{
+  margin-bottom:10px; line-height:1.6;
+}
+
+@media(max-width:768px){
+  .legal-container{ padding:40px 16px 70px; }
+  .legal-header{ margin-bottom:35px; padding-bottom:24px; }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Header Script Injection -->
+  <script src="header.js" defer></script>
+
+  <!-- Legal Main Content -->
+  <main class="legal-container">
+    <div class="legal-header">
+      <span class="legal-tag">Agreement</span>
+      <h1>Terms of Service</h1>
+      <p>Last updated: August 2026</p>
+    </div>
+
+    <div class="legal-content">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing and browsing <strong>Aura Journal</strong>, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this website.</p>
+
+      <h2>2. Intellectual Property Rights</h2>
+      <p>Other than content you own, which you may have opted to include on this website, under these Terms, Aura Journal and/or its licensors own all the intellectual property rights and materials contained in this website. You are granted a limited license only for purposes of viewing the material contained on this website.</p>
+
+      <h2>3. Restrictions</h2>
+      <p>You are specifically restricted from all of the following:</p>
+      <ul>
+        <li>Publishing any website material in any other media without prior written consent.</li>
+        <li>Selling, sublicensing, and/or otherwise commercializing any website material.</li>
+        <li>Using this website in any way that is or may be damaging to this website.</li>
+        <li>Using this website contrary to applicable laws and regulations, or in any way that may cause harm to the site or any person or business entity.</li>
+      </ul>
+
+      <h2>4. Third-Party Links &amp; Offers</h2>
+      <p>Our website may contain hyperlinks to external third-party websites, partner hubs, or promotional offers. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+
+      <h2>5. Limitation of Liability</h2>
+      <p>In no event shall Aura Journal, nor any of its officers, directors, and employees, be held liable for anything arising out of or in any way connected with your use of this website, whether such liability is under contract, tort, or otherwise.</p>
+
+      <h2>6. Changes to Terms</h2>
+      <p>Aura Journal reserves the right to revise these terms at any time as it sees fit. By using this website, you are expected to review these terms on a regular basis to ensure you understand all terms governing use of this website.</p>
+    </div>
+  </main>
+
+  <!-- Footer Script Injection -->
+  <script src="footer.js" defer></script>
+
+</body>
+</html>
