@@ -3,72 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Fashion &amp; Style Archive — Aura Journal</title>
+<title>Fashion &amp; Timeless Style — Aura Journal</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
-:root{ --bg:#ffffff; --card:#f9f9fb; --text:#111111; --muted:#555555; --accent:#8a6522; --border:#e5e5e5; --max:1100px; }
+
+:root{
+  --bg:#ffffff;
+  --card:#f9f9fb;
+  --card-hover:#f2f3f7;
+  --text:#111111;
+  --muted:#555555;
+  --accent:#8a6522;
+  --border:#e5e5e5;
+  --max:1100px;
+}
+
 *, *::before, *::after{ box-sizing:border-box; }
-body{ margin:0; background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans',sans-serif; line-height:1.7; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; padding:0; width:100%; background:var(--bg); color:var(--text);
+  font-family:'Plus Jakarta Sans',Arial,sans-serif; line-height:1.7;
+}
 a{ color:inherit; text-decoration:none; }
-.site-header{ position:sticky; top:0; z-index:999; background:rgba(255,255,255,0.98); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
-.header-inner{ width:100%; max-width:1150px; height:74px; margin:0 auto; padding:0 20px; display:flex; align-items:center; justify-content:space-between; }
-.brand-logo{ font-family:'Playfair Display',serif; font-size:22px; font-weight:700; }
+
+/* Clean Header */
+.site-header{
+  position:sticky; top:0; z-index:999; width:100%;
+  background:rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner{
+  width:100%; max-width:1150px; height:74px; margin:0 auto; padding:0 20px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand-logo{
+  font-family:'Playfair Display',Georgia,serif; font-size:22px; font-weight:700; color:var(--text);
+}
 .brand-logo span{ color:var(--accent); }
-.header-nav{ display:flex; align-items:center; gap:20px; font-size:13.5px; font-weight:600; color:var(--muted); }
+
+.header-nav{
+  display:flex; align-items:center; gap:18px; font-size:13px; font-weight:600; color:var(--muted);
+}
+.header-nav a{ transition:color 0.2s; white-space:nowrap; }
 .header-nav a:hover{ color:var(--accent); }
-.cat-hero{ max-width:var(--max); margin:0 auto; padding:50px 20px 30px; text-align:center; }
-.cat-tag{ color:var(--accent); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; display:inline-block; background:rgba(138,101,34,0.08); padding:6px 16px; border-radius:20px; border:1px solid rgba(138,101,34,0.2); }
-.cat-hero h1{ font-family:'Playfair Display',serif; font-size:clamp(32px, 5vw, 44px); margin:0 0 12px; }
-.cat-hero p{ color:var(--muted); font-size:16px; max-width:650px; margin:0 auto; }
-.container{ max-width:var(--max); margin:0 auto; padding:20px 20px 60px; }
-.articles-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; }
-.article-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px; transition:transform 0.25s, box-shadow 0.25s; display:flex; flex-direction:column; justify-content:space-between; }
-.article-card:hover{ transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.06); border-color:#d0d0d0; }
-.article-meta{ font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
-.article-card h3{ font-family:'Playfair Display',serif; font-size:18px; margin:0 0 10px; line-height:1.35; }
-.article-card p{ color:var(--muted); font-size:13.5px; margin:0 0 20px; line-height:1.55; }
-.read-more{ font-size:13px; font-weight:700; display:inline-flex; align-items:center; gap:6px; transition:color 0.2s; }
+.header-nav .highlight-btn{
+  background:var(--text); color:#ffffff; padding:8px 14px; border-radius:8px;
+}
+.header-nav .highlight-btn:hover{ background:var(--accent); color:#ffffff; }
+
+/* Category Header Banner */
+.cat-hero{
+  width:100%; max-width:var(--max); margin:0 auto; padding:50px 20px 30px; text-align:center;
+}
+.cat-tag{
+  color:var(--accent); font-size:11px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:12px; display:inline-block;
+  background:rgba(138, 101, 34, 0.08); padding:6px 16px; border-radius:20px;
+  border:1px solid rgba(138, 101, 34, 0.2);
+}
+.cat-hero h1{
+  font-family:'Playfair Display',Georgia,serif; font-size:clamp(32px, 5vw, 44px);
+  margin:0 0 12px; color:var(--text);
+}
+.cat-hero p{
+  color:var(--muted); font-size:16px; max-width:650px; margin:0 auto;
+}
+
+/* 12 Articles Grid Container */
+.container{
+  width:100%; max-width:var(--max); margin:0 auto; padding:20px 20px 60px;
+}
+.articles-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px;
+}
+.article-card{
+  background:var(--card); border:1px solid var(--border); border-radius:16px;
+  padding:26px; transition:transform 0.25s ease, box-shadow 0.25s ease;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.article-card:hover{
+  transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.06); border-color:#d0d0d0;
+}
+.article-meta{
+  font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;
+}
+.article-card h3{
+  font-family:'Playfair Display',Georgia,serif; font-size:18px; color:var(--text); margin:0 0 10px; line-height:1.35;
+}
+.article-card p{
+  color:var(--muted); font-size:13.5px; margin:0 0 20px; line-height:1.55;
+}
+.read-more{
+  font-size:13px; font-weight:700; color:var(--text); display:inline-flex; align-items:center; gap:6px;
+  transition:color 0.2s;
+}
 .article-card:hover .read-more{ color:var(--accent); }
-.site-footer{ border-top:1px solid var(--border); background:#f9f9fb; padding:40px 20px; text-align:center; color:var(--muted); font-size:12.5px; }
-.footer-links{ display:flex; justify-content:center; gap:20px; margin-bottom:14px; font-weight:600; }
-@media(max-width:600px){ .articles-grid{ grid-template-columns:1fr; } }
+
+/* Footer */
+.site-footer{
+  width:100%; border-top:1px solid var(--border); background:#f9f9fb;
+  padding:45px 20px; text-align:center; color:var(--muted); font-size:12.5px;
+}
+.footer-links{
+  display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin-bottom:16px; font-weight:600;
+}
+.footer-links a{ color:var(--muted); transition:color 0.2s; }
+.footer-links a:hover{ color:var(--accent); }
+.disclaimer{ max-width:720px; margin:14px auto 0; font-size:11px; color:#777777; line-height:1.55; }
+
+@media(max-width:900px){
+  .header-nav{ gap:12px; font-size:12px; }
+}
+@media(max-width:600px){
+  .header-inner{ padding:0 14px; height:68px; }
+  .brand-logo{ font-size:18px; }
+  .header-nav{ gap:10px; font-size:11px; overflow-x:auto; padding-bottom:4px; }
+  .header-nav::-webkit-scrollbar{ display:none; }
+  .cat-hero{ padding:35px 16px 20px; }
+  .articles-grid{ grid-template-columns:1fr; gap:16px; }
+}
 </style>
 </head>
+
 <body>
+
+  <!-- Header with All Niches -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="brand-logo">Aura Journal<span>.</span></a>
       <nav class="header-nav">
-        <a href="index.html">Home</a>
-        <a href="categories.html">All Categories</a>
-        <a href="offer.html" style="background:var(--text); color:#fff; padding:8px 14px; border-radius:8px;">Partner Hub</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="decor.html">Home Decor</a>
+        <a href="fashion.html" style="color:var(--accent);">Fashion</a>
+        <a href="travel.html">Travel</a>
+        <a href="food.html">Food</a>
+        <a href="nature.html">Nature</a>
+        <a href="offer.html" class="highlight-btn" style="color: #fff;">Partner Hub</a>
       </nav>
     </div>
   </header>
+
+  <!-- Category Title Section -->
   <section class="cat-hero">
-    <span class="cat-tag">Fashion &amp; Style Archive</span>
-    <h1>Timeless Wardrobe Aesthetics</h1>
-    <p>Explore 12 curated style directions focusing on understated elegance, high-quality fabrics, and sustainable capsule collections.</p>
+    <span class="cat-tag">Fashion Archive</span>
+    <h1>Timeless Aesthetics &amp; Sustainable Wardrobes</h1>
+    <p>Explore 12 curated guides on capsule styling, artisanal fabrics, and enduring personal elegance.</p>
   </section>
+
+  <!-- 12 Clickable Articles Grid -->
   <main class="container">
     <div class="articles-grid">
-      <article class="article-card"><div><div class="article-meta">Capsule • 4 Min Read</div><h3>Building the Ultimate Minimalist Capsule Wardrobe</h3><p>How to curate 30 versatile pieces that mix and match effortlessly across all four seasons.</p></div><a href="articles/minimalist-capsule-wardrobe.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Fabrics • 3 Min Read</div><h3>The Superior Quality of Pure Cashmere and Wool</h3><p>Why investing in natural organic fibers beats synthetic blends every single time.</p></div><a href="articles/pure-cashmere-wool.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Tailoring • 5 Min Read</div><h3>The Underrated Impact of Custom Tailoring</h3><p>Why fit matters more than designer labels when creating a polished silhouette.</p></div><a href="articles/impact-of-custom-tailoring.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Palettes • 3 Min Read</div><h3>Monochromatic Dressing for Effortless Elegance</h3><p>Mastering tone-on-tone dressing using neutrals, creams, charcoals, and navy.</p></div><a href="articles/monochromatic-dressing.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Footwear • 4 Min Read</div><h3>Invest in Heritage Leather Footwear</h3><p>Classic loafers, minimal white sneakers, and ankle boots built to last decades.</p></div><a href="articles/heritage-leather-footwear.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Accessories • 3 Min Read</div><h3>Subtle Accessories That Elevate Any Outfit</h3><p>Minimalist gold jewelry, structured leather bags, and classic silk scarves.</p></div><a href="articles/subtle-accessories.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Sustainability • 5 Min Read</div><h3>Slow Fashion vs. Fast Trends</h3><p>Understanding the environmental and stylistic benefits of ethical clothing choices.</p></div><a href="articles/slow-vs-fast-fashion.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Denim • 4 Min Read</div><h3>Finding the Perfect Raw Denim Jeans</h3><p>How rigid, unwashed denim molds to your body and improves with age.</p></div><a href="articles/raw-denim-guide.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Outerwear • 4 Min Read</div><h3>The Timeless Trench Coat Investment</h3><p>Styling history’s most iconic transitional outerwear piece for modern settings.</p></div><a href="articles/timeless-trench-coat.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Care • 3 Min Read</div><h3>Garment Care 101: Preserving Fine Fabrics</h3><p>Proper washing, steaming, and storage techniques to extend your wardrobe’s lifespan.</p></div><a href="articles/garment-care-guide.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Evening • 4 Min Read</div><h3>Understated Evening and Dinner Attire</h3><p>Dressing with quiet confidence for formal dinners and intimate gatherings.</p></div><a href="articles/understated-evening-attire.html" class="read-more">Read Full Article →</a></article>
-      <article class="article-card"><div><div class="article-meta">Travel • 3 Min Read</div><h3>Packing Light: The Weekender Style Guide</h3><p>How to pack wrinkle-free essentials for a 3-day getaway in a single carry-on.</p></div><a href="articles/weekender-style-guide.html" class="read-more">Read Full Article →</a></article>
+
+      <!-- Article 1 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Capsule Wardrobe • 4 Min Read</div>
+          <h3>The Art of the Minimalist Capsule Wardrobe</h3>
+          <p>How to curate a streamlined collection of versatile pieces that outlast seasonal trends.</p>
+        </div>
+        <a href="articles/capsule-wardrobe.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Textiles • 5 Min Read</div>
+          <h3>Embracing Organic Linen and Raw Silk</h3>
+          <p>Why natural, breathable fabrics feel better against the skin and age with grace.</p>
+        </div>
+        <a href="articles/linen-raw-silk.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Styling • 3 Min Read</div>
+          <h3>Monochromatic Palettes for Effortless Chic</h3>
+          <p>Mastering tone-on-tone dressing with earth tones, neutrals, and subtle contrasts.</p>
+        </div>
+        <a href="articles/monochromatic-palettes.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Sustainability • 6 Min Read</div>
+          <h3>Investing in Slow Fashion Heritage Brands</h3>
+          <p>Moving away from fast-fashion cycles toward ethical craftsmanship and durability.</p>
+        </div>
+        <a href="articles/slow-fashion-brands.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Accessories • 4 Min Read</div>
+          <h3>The Power of Intentional Statement Pieces</h3>
+          <p>Choosing a few signature vintage accessories that elevate even the simplest outfits.</p>
+        </div>
+        <a href="articles/intentional-accessories.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Footwear • 4 Min Read</div>
+          <h3>Timeless Footwear: Leather and Craftsmanship</h3>
+          <p>Handmade loafers, minimalist sneakers, and classic boots built to last decades.</p>
+        </div>
+        <a href="articles/timeless-footwear.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 7 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Tailoring • 5 Min Read</div>
+          <h3>The Transformative Impact of Perfect Tailoring</h3>
+          <p>Why getting everyday garments altered creates an immaculate, high-end silhouette.</p>
+        </div>
+        <a href="articles/perfect-tailoring.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 8 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Care Guide • 3 Min Read</div>
+          <h3>Garment Care: Protecting Wool and Cashmere</h3>
+          <p>Simple daily habits and washing routines to keep luxury knits pill-free and soft.</p>
+        </div>
+        <a href="articles/wool-cashmere-care.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 9 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Vintage • 5 Min Read</div>
+          <h3>Navigating Thrift Stores for Hidden Treasures</h3>
+          <p>A practical guide to finding rare outerwear, blazers, and unique textiles.</p>
+        </div>
+        <a href="articles/thrift-store-treasures.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 10 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Eveningwear • 4 Min Read</div>
+          <h3>Understated Elegance for Evening Settings</h3>
+          <p>Redefining formal attire through clean lines, quiet luxury, and minimal fuss.</p>
+        </div>
+        <a href="articles/understated-eveningwear.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 11 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Travel Style • 4 Min Read</div>
+          <h3>Packing Light with Multi-Way Wardrobe Staples</h3>
+          <p>How to travel across climates using only a handful of perfectly coordinated items.</p>
+        </div>
+        <a href="articles/packing-light-style.html" class="read-more">Read Full Article →</a>
+      </article>
+
+      <!-- Article 12 -->
+      <article class="article-card">
+        <div>
+          <div class="article-meta">Philosophy • 4 Min Read</div>
+          <h3>Developing a Signature Personal Uniform</h3>
+          <p>Discovering the comfort and confidence of wearing a reliable, recurring everyday look.</p>
+        </div>
+        <a href="articles/signature-uniform.html" class="read-more">Read Full Article →</a>
+      </article>
+
     </div>
   </main>
+
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-links"><a href="index.html">Home</a><a href="categories.html">All Categories</a><a href="offer.html">Partner Hub</a></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="offer.html">Partner Hub</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
     <p>&copy; 2026 Aura Journal. All rights reserved.</p>
+    <p class="disclaimer">
+      Disclaimer: Aura Journal is an independent digital media publisher and referral portal. Featured third-party sponsor offers support ongoing editorial research and open access distribution.
+    </p>
   </footer>
+
 </body>
 </html>
