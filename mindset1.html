@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<title>The Quiet Power of Intentional Thinking — Aura Journal</title>
+
+<meta name="description"
+content="Explore how intentional thinking can create clearer routines, better decisions and a more focused everyday life.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+  --bg:#f7f6f2;
+  --white:#ffffff;
+  --text:#20231f;
+  --muted:#6d716b;
+  --line:#e2e0d9;
+  --accent:#8b6b3e;
+  --accent-light:#eee7da;
+  --dark:#242821;
+  --max:1180px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+
+  background:var(--bg);
+  color:var(--text);
+
+  font-family:"DM Sans",Arial,sans-serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+ul{
+  list-style:none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+
+  width:100%;
+
+  background:rgba(247,246,242,.97);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  border-bottom:1px solid rgba(32,35,31,.09);
+}
+
+.header-inner{
+  width:min(calc(100% - 40px),var(--max));
+
+  height:76px;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:25px;
+}
+
+.logo{
+  flex-shrink:0;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:25px;
+  font-weight:700;
+
+  letter-spacing:-.5px;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.navigation{
+  margin-left:auto;
+
+  display:flex;
+  align-items:center;
+}
+
+.nav-list{
+  display:flex;
+  align-items:center;
+
+  gap:4px;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.nav-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:7px;
+
+  padding:10px 13px;
+
+  border-radius:8px;
+
+  color:#50554f;
+
+  font-size:13px;
+  font-weight:600;
+
+  transition:.2s ease;
+}
+
+.nav-link:hover{
+  background:#eceae4;
+  color:var(--text);
+}
+
+.arrow{
+  font-size:9px;
+  transition:transform .2s ease;
+}
+
+.nav-item:hover .arrow{
+  transform:rotate(180deg);
+}
+
+
+/* =========================================================
+   DESKTOP DROPDOWN
+========================================================= */
+
+.dropdown{
+  position:absolute;
+
+  top:calc(100% + 8px);
+  left:50%;
+
+  transform:
+    translateX(-50%)
+    translateY(8px);
+
+  width:210px;
+
+  max-height:360px;
+
+  overflow-y:auto;
+
+  padding:7px;
+
+  background:var(--white);
+
+  border:1px solid var(--line);
+
+  border-radius:12px;
+
+  box-shadow:
+    0 18px 45px rgba(25,25,20,.13);
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:
+    opacity .2s ease,
+    transform .2s ease,
+    visibility .2s ease;
+}
+
+@media(min-width:981px){
+
+  .nav-item:hover .dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+}
+
+.dropdown::-webkit-scrollbar{
+  width:4px;
+}
+
+.dropdown::-webkit-scrollbar-thumb{
+  background:#cfcac0;
+  border-radius:10px;
+}
+
+.dropdown a{
+  display:block;
+
+  width:100%;
+
+  padding:10px 12px;
+
+  border-radius:7px;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  transition:.18s ease;
+}
+
+.dropdown a:hover{
+  background:var(--accent-light);
+  color:var(--text);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-button{
+  display:none;
+
+  width:43px;
+  height:43px;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  border:1px solid var(--line);
+  border-radius:10px;
+
+  background:var(--white);
+  color:var(--text);
+
+  cursor:pointer;
+
+  font-size:21px;
+  line-height:1;
+}
+
+
+/* =========================================================
+   ARTICLE WRAPPER
+========================================================= */
+
+.article-wrapper{
+  width:min(calc(100% - 40px),860px);
+
+  margin:0 auto;
+
+  padding:55px 0 70px;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb{
+  margin-bottom:24px;
+
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  color:#8b8e87;
+
+  font-size:11px;
+}
+
+.breadcrumb a:hover{
+  color:var(--accent);
+}
+
+.breadcrumb span{
+  color:#b3b4ae;
+}
+
+
+/* =========================================================
+   ARTICLE HEADER
+========================================================= */
+
+.article-category{
+  display:inline-block;
+
+  margin-bottom:15px;
+
+  padding:6px 9px;
+
+  background:var(--accent-light);
+
+  border-radius:6px;
+
+  color:var(--accent);
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:1.4px;
+
+  text-transform:uppercase;
+}
+
+.article-title{
+  max-width:800px;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:clamp(36px,6vw,61px);
+
+  line-height:1.08;
+
+  letter-spacing:-1.5px;
+
+  font-weight:600;
+}
+
+.article-intro{
+  max-width:730px;
+
+  margin-top:22px;
+
+  color:var(--muted);
+
+  font-size:16px;
+
+  line-height:1.8;
+}
+
+.article-meta{
+  margin-top:25px;
+
+  padding-bottom:25px;
+
+  border-bottom:1px solid var(--line);
+
+  display:flex;
+  align-items:center;
+
+  gap:15px;
+
+  color:#858981;
+
+  font-size:11px;
+}
+
+
+/* =========================================================
+   ARTICLE VISUAL
+========================================================= */
+
+.article-visual{
+  position:relative;
+
+  height:330px;
+
+  margin:35px 0 45px;
+
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(255,255,255,.85),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 75% 70%,
+      rgba(139,107,62,.14),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #dedbd1,
+      #f3f1eb
+    );
+}
+
+.visual-circle-one{
+  position:absolute;
+
+  width:240px;
+  height:240px;
+
+  border:1px solid rgba(139,107,62,.25);
+
+  border-radius:50%;
+
+  left:15%;
+  top:15%;
+}
+
+.visual-circle-two{
+  position:absolute;
+
+  width:150px;
+  height:150px;
+
+  border:1px solid rgba(139,107,62,.20);
+
+  border-radius:50%;
+
+  right:20%;
+  bottom:15%;
+}
+
+.visual-line{
+  position:absolute;
+
+  width:55%;
+  height:1px;
+
+  left:22%;
+  top:50%;
+
+  background:rgba(139,107,62,.25);
+
+  transform:rotate(-25deg);
+}
+
+.visual-text{
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:clamp(28px,5vw,45px);
+
+  color:rgba(32,35,31,.72);
+
+  letter-spacing:-1px;
+}
+
+
+/* =========================================================
+   ARTICLE CONTENT
+========================================================= */
+
+.article-content{
+  max-width:730px;
+  margin:auto;
+}
+
+.article-content p{
+  margin-bottom:22px;
+
+  color:#41453f;
+
+  font-size:15px;
+
+  line-height:1.9;
+}
+
+.article-content h2{
+  margin:45px 0 15px;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:29px;
+
+  line-height:1.3;
+}
+
+.article-content h3{
+  margin:32px 0 12px;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:22px;
+}
+
+.article-content strong{
+  color:var(--text);
+}
+
+.article-content ul{
+  margin:15px 0 25px 20px;
+
+  list-style:disc;
+}
+
+.article-content li{
+  margin-bottom:10px;
+
+  padding-left:5px;
+
+  color:#4d514b;
+
+  font-size:14px;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.article-quote{
+  margin:38px 0;
+
+  padding:24px 26px;
+
+  background:#eeece6;
+
+  border-left:3px solid var(--accent);
+
+  border-radius:0 10px 10px 0;
+}
+
+.article-quote p{
+  margin:0;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  color:#44463f;
+
+  font-size:20px;
+
+  line-height:1.55;
+}
+
+
+/* =========================================================
+   CPA OFFER CARD
+========================================================= */
+
+.partner-offer{
+  margin:48px 0;
+
+  padding:28px;
+
+  background:#ffffff;
+
+  border:1px solid #dedbd2;
+
+  border-radius:16px;
+
+  box-shadow:
+    0 10px 30px rgba(30,30,20,.06);
+}
+
+.offer-label{
+  display:inline-block;
+
+  margin-bottom:14px;
+
+  padding:6px 9px;
+
+  background:#eee7da;
+
+  color:#765a35;
+
+  border-radius:6px;
+
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.partner-offer h2{
+  margin:0 0 10px;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:28px;
+
+  line-height:1.3;
+
+  color:#20231f;
+}
+
+.offer-text{
+  margin:0 0 20px;
+
+  color:#666b63;
+
+  font-size:13px;
+
+  line-height:1.75;
+}
+
+.offer-details{
+  display:grid;
+
+  gap:9px;
+
+  margin-bottom:22px;
+}
+
+.offer-detail{
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+}
+
+.offer-detail span{
+  width:20px;
+  height:20px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  background:#eee7da;
+
+  border-radius:50%;
+
+  color:#765a35;
+
+  font-size:11px;
+
+  font-weight:700;
+}
+
+.offer-detail p{
+  margin:0;
+
+  color:#50554e;
+
+  font-size:12px;
+}
+
+.offer-button{
+  width:100%;
+
+  min-height:48px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:0 20px;
+
+  background:#242821;
+
+  border:1px solid #242821;
+
+  border-radius:9px;
+
+  color:#fff;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  transition:.2s ease;
+}
+
+.offer-button:hover{
+  background:#765a35;
+
+  border-color:#765a35;
+}
+
+.offer-button span{
+  font-size:17px;
+
+  transition:transform .2s ease;
+}
+
+.offer-button:hover span{
+  transform:translateX(3px);
+}
+
+.affiliate-disclosure{
+  margin:12px 0 0;
+
+  color:#777b73;
+
+  font-size:9px;
+
+  line-height:1.55;
+
+  text-align:center;
+}
+
+
+/* =========================================================
+   KEY TAKEAWAYS
+========================================================= */
+
+.takeaways{
+  margin:42px 0;
+
+  padding:28px;
+
+  background:var(--white);
+
+  border:1px solid var(--line);
+
+  border-radius:14px;
+}
+
+.takeaways-title{
+  margin-bottom:15px;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:22px;
+}
+
+.takeaway{
+  display:flex;
+
+  gap:12px;
+
+  padding:11px 0;
+
+  border-bottom:1px solid #eee;
+}
+
+.takeaway:last-child{
+  border-bottom:0;
+}
+
+.takeaway-number{
+  width:25px;
+  height:25px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  background:var(--accent-light);
+
+  color:var(--accent);
+
+  font-size:10px;
+
+  font-weight:700;
+}
+
+.takeaway p{
+  margin:0;
+
+  font-size:13px;
+
+  line-height:1.65;
+}
+
+
+/* =========================================================
+   ARTICLE NAVIGATION
+========================================================= */
+
+.article-navigation{
+  margin-top:45px;
+
+  padding-top:25px;
+
+  border-top:1px solid var(--line);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:15px;
+}
+
+.article-nav-link{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:4px;
+
+  max-width:48%;
+}
+
+.article-nav-label{
+  color:#999c95;
+
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+}
+
+.article-nav-title{
+  color:#444840;
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:15px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+  margin-top:20px;
+
+  background:#efeee9;
+
+  border-top:1px solid var(--line);
+}
+
+.footer-inner{
+  width:min(calc(100% - 40px),var(--max));
+
+  margin:auto;
+
+  padding:38px 0;
+}
+
+.footer-top{
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:35px;
+}
+
+.footer-brand{
+  max-width:350px;
+}
+
+.footer-brand .logo{
+  display:inline-block;
+
+  margin-bottom:10px;
+}
+
+.footer-brand p{
+  color:var(--muted);
+
+  font-size:12px;
+
+  line-height:1.7;
+}
+
+.footer-links{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:flex-end;
+
+  gap:18px;
+}
+
+.footer-links a{
+  color:#555a53;
+
+  font-size:11px;
+
+  font-weight:600;
+}
+
+.footer-links a:hover{
+  color:var(--accent);
+}
+
+.copyright{
+  margin-top:28px;
+
+  padding-top:18px;
+
+  border-top:1px solid var(--line);
+
+  color:#898d86;
+
+  font-size:10px;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media(max-width:980px){
+
+  .header-inner{
+    height:68px;
+  }
+
+  .menu-button{
+    display:flex;
+  }
+
+  .navigation{
+    position:fixed;
+
+    top:68px;
+    right:-100%;
+
+    width:100%;
+    max-width:390px;
+
+    height:calc(100vh - 68px);
+
+    padding:18px;
+
+    display:block;
+
+    background:#f7f6f2;
+
+    border-left:1px solid var(--line);
+
+    overflow-y:auto;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.08);
+
+    transition:right .3s ease;
+
+    z-index:9998;
+  }
+
+  .navigation.open{
+    right:0;
+  }
+
+  .nav-list{
+    display:block;
+
+    width:100%;
+  }
+
+  .nav-item{
+    width:100%;
+
+    margin-bottom:8px;
+  }
+
+  .nav-link{
+    width:100%;
+
+    min-height:50px;
+
+    padding:14px 15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+    color:var(--text);
+
+    font-size:14px;
+  }
+
+  .nav-item.active .arrow{
+    transform:rotate(180deg);
+  }
+
+  .dropdown{
+
+    position:static !important;
+
+    width:100% !important;
+
+    max-height:0 !important;
+
+    margin:0 !important;
+
+    padding:0 7px !important;
+
+    display:block !important;
+
+    overflow:hidden !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+    pointer-events:none !important;
+
+    background:#eeece6 !important;
+
+    border:0 !important;
+
+    border-radius:10px;
+
+    box-shadow:none !important;
+
+    transform:none !important;
+
+    transition:
+      max-height .3s ease,
+      padding .3s ease,
+      margin .3s ease !important;
+  }
+
+  .nav-item.active .dropdown{
+
+    max-height:520px !important;
+
+    margin-top:6px !important;
+
+    padding:7px !important;
+
+    pointer-events:auto !important;
+
+    border:1px solid var(--line) !important;
+  }
+
+  .dropdown li{
+    display:block;
+
+    width:100%;
+  }
+
+  .dropdown a{
+
+    display:block !important;
+
+    width:100%;
+
+    padding:11px 13px !important;
+
+    color:#555a53 !important;
+
+    background:transparent !important;
+
+    border-radius:7px;
+
+    font-size:12px;
+  }
+
+  .dropdown a:hover{
+    background:#fff !important;
+
+    color:var(--text) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE ARTICLE
+========================================================= */
+
+@media(max-width:600px){
+
+  .header-inner,
+  .article-wrapper,
+  .footer-inner{
+    width:calc(100% - 28px);
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .navigation{
+    max-width:none;
+
+    width:100%;
+
+    border-left:0;
+  }
+
+  .article-wrapper{
+    padding:32px 0 50px;
+  }
+
+  .breadcrumb{
+    font-size:10px;
+
+    margin-bottom:20px;
+  }
+
+  .article-category{
+    font-size:9px;
+  }
+
+  .article-title{
+    font-size:39px;
+
+    letter-spacing:-1px;
+  }
+
+  .article-intro{
+    font-size:14px;
+
+    line-height:1.75;
+  }
+
+  .article-meta{
+    font-size:10px;
+  }
+
+  .article-visual{
+    height:230px;
+
+    margin:28px 0 35px;
+
+    border-radius:14px;
+  }
+
+  .visual-circle-one{
+    width:165px;
+    height:165px;
+  }
+
+  .visual-circle-two{
+    width:105px;
+    height:105px;
+  }
+
+  .visual-text{
+    font-size:28px;
+  }
+
+  .article-content p{
+    font-size:14px;
+
+    line-height:1.85;
+  }
+
+  .article-content h2{
+    margin-top:38px;
+
+    font-size:26px;
+  }
+
+  .article-content h3{
+    font-size:21px;
+  }
+
+  .article-quote{
+    padding:20px;
+
+    margin:32px 0;
+  }
+
+  .article-quote p{
+    font-size:18px;
+  }
+
+  .partner-offer{
+    margin:38px 0;
+
+    padding:22px 18px;
+
+    border-radius:14px;
+  }
+
+  .partner-offer h2{
+    font-size:25px;
+  }
+
+  .offer-text{
+    font-size:12px;
+  }
+
+  .offer-button{
+    min-height:50px;
+  }
+
+  .affiliate-disclosure{
+    font-size:9px;
+  }
+
+  .takeaways{
+    padding:20px;
+  }
+
+  .article-navigation{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+  }
+
+  .article-nav-link{
+    max-width:none;
+  }
+
+  .footer{
+    margin-top:0;
+  }
+
+  .footer-top{
+    display:block;
+  }
+
+  .footer-links{
+    margin-top:22px;
+
+    justify-content:flex-start;
+
+    gap:13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+  .article-title{
+    font-size:34px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+
+    <a
+      href="https://sites.google.com/view/aura-journals"
+      class="logo">
+
+      Aura Journal<span>.</span>
+
+    </a>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false">
+
+      ☰
+
+    </button>
+
+
+    <nav
+      class="navigation"
+      id="navigation"
+      aria-label="Main navigation">
+
+
+      <ul class="nav-list">
+
+
+        <!-- MINDSET -->
+
+        <li class="nav-item">
+
+          <a href="#" class="nav-link">
+
+            <span>Mindset</span>
+
+            <span class="arrow">▼</span>
+
+          </a>
+
+
+          <ul class="dropdown">
+
+            <li><a href="mindset-1.html">Article 01</a></li>
+            <li><a href="mindset-2.html">Article 02</a></li>
+            <li><a href="mindset-3.html">Article 03</a></li>
+            <li><a href="mindset-4.html">Article 04</a></li>
+            <li><a href="mindset-5.html">Article 05</a></li>
+            <li><a href="mindset-6.html">Article 06</a></li>
+            <li><a href="mindset-7.html">Article 07</a></li>
+            <li><a href="mindset-8.html">Article 08</a></li>
+            <li><a href="mindset-9.html">Article 09</a></li>
+            <li><a href="mindset-10.html">Article 10</a></li>
+            <li><a href="mindset-11.html">Article 11</a></li>
+            <li><a href="mindset-12.html">Article 12</a></li>
+
+          </ul>
+
+        </li>
+
+
+        <!-- TRAVEL -->
+
+        <li class="nav-item">
+
+          <a href="#" class="nav-link">
+
+            <span>Travel</span>
+
+            <span class="arrow">▼</span>
+
+          </a>
+
+
+          <ul class="dropdown">
+
+            <li><a href="travel-1.html">Article 01</a></li>
+            <li><a href="travel-2.html">Article 02</a></li>
+            <li><a href="travel-3.html">Article 03</a></li>
+            <li><a href="travel-4.html">Article 04</a></li>
+            <li><a href="travel-5.html">Article 05</a></li>
+            <li><a href="travel-6.html">Article 06</a></li>
+            <li><a href="travel-7.html">Article 07</a></li>
+            <li><a href="travel-8.html">Article 08</a></li>
+            <li><a href="travel-9.html">Article 09</a></li>
+            <li><a href="travel-10.html">Article 10</a></li>
+            <li><a href="travel-11.html">Article 11</a></li>
+            <li><a href="travel-12.html">Article 12</a></li>
+
+          </ul>
+
+        </li>
+
+
+        <!-- HOME -->
+
+        <li class="nav-item">
+
+          <a href="#" class="nav-link">
+
+            <span>Home</span>
+
+            <span class="arrow">▼</span>
+
+          </a>
+
+
+          <ul class="dropdown">
+
+            <li><a href="home-1.html">Article 01</a></li>
+            <li><a href="home-2.html">Article 02</a></li>
+            <li><a href="home-3.html">Article 03</a></li>
+            <li><a href="home-4.html">Article 04</a></li>
+            <li><a href="home-5.html">Article 05</a></li>
+            <li><a href="home-6.html">Article 06</a></li>
+            <li><a href="home-7.html">Article 07</a></li>
+            <li><a href="home-8.html">Article 08</a></li>
+            <li><a href="home-9.html">Article 09</a></li>
+            <li><a href="home-10.html">Article 10</a></li>
+            <li><a href="home-11.html">Article 11</a></li>
+            <li><a href="home-12.html">Article 12</a></li>
+
+          </ul>
+
+        </li>
+
+
+        <!-- NATURE -->
+
+        <li class="nav-item">
+
+          <a href="#" class="nav-link">
+
+            <span>Nature</span>
+
+            <span class="arrow">▼</span>
+
+          </a>
+
+
+          <ul class="dropdown">
+
+            <li><a href="nature-1.html">Article 01</a></li>
+            <li><a href="nature-2.html">Article 02</a></li>
+            <li><a href="nature-3.html">Article 03</a></li>
+            <li><a href="nature-4.html">Article 04</a></li>
+            <li><a href="nature-5.html">Article 05</a></li>
+            <li><a href="nature-6.html">Article 06</a></li>
+            <li><a href="nature-7.html">Article 07</a></li>
+            <li><a href="nature-8.html">Article 08</a></li>
+            <li><a href="nature-9.html">Article 09</a></li>
+            <li><a href="nature-10.html">Article 10</a></li>
+            <li><a href="nature-11.html">Article 11</a></li>
+            <li><a href="nature-12.html">Article 12</a></li>
+
+          </ul>
+
+        </li>
+
+
+        <!-- FASHION -->
+
+        <li class="nav-item">
+
+          <a href="#" class="nav-link">
+
+            <span>Fashion</span>
+
+            <span class="arrow">▼</span>
+
+          </a>
+
+
+          <ul class="dropdown">
+
+            <li><a href="fashion-1.html">Article 01</a></li>
+            <li><a href="fashion-2.html">Article 02</a></li>
+            <li><a href="fashion-3.html">Article 03</a></li>
+            <li><a href="fashion-4.html">Article 04</a></li>
+            <li><a href="fashion-5.html">Article 05</a></li>
+            <li><a href="fashion-6.html">Article 06</a></li>
+            <li><a href="fashion-7.html">Article 07</a></li>
+            <li><a href="fashion-8.html">Article 08</a></li>
+            <li><a href="fashion-9.html">Article 09</a></li>
+            <li><a href="fashion-10.html">Article 10</a></li>
+            <li><a href="fashion-11.html">Article 11</a></li>
+            <li><a href="fashion-12.html">Article 12</a></li>
+
+          </ul>
+
+        </li>
+
+
+        <!-- CULINARY -->
+
+        <li class="nav-item">
+
+          <a href="#" class="nav-link">
+
+            <span>Culinary</span>
+
+            <span class="arrow">▼</span>
+
+          </a>
+
+
+          <ul class="dropdown">
+
+            <li><a href="culinary-1.html">Article 01</a></li>
+            <li><a href="culinary-2.html">Article 02</a></li>
+            <li><a href="culinary-3.html">Article 03</a></li>
+            <li><a href="culinary-4.html">Article 04</a></li>
+            <li><a href="culinary-5.html">Article 05</a></li>
+            <li><a href="culinary-6.html">Article 06</a></li>
+            <li><a href="culinary-7.html">Article 07</a></li>
+            <li><a href="culinary-8.html">Article 08</a></li>
+            <li><a href="culinary-9.html">Article 09</a></li>
+            <li><a href="culinary-10.html">Article 10</a></li>
+            <li><a href="culinary-11.html">Article 11</a></li>
+            <li><a href="culinary-12.html">Article 12</a></li>
+
+          </ul>
+
+        </li>
+
+
+      </ul>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     ARTICLE
+===================================================== -->
+
+<main class="article-wrapper">
+
+
+  <div class="breadcrumb">
+
+    <a href="https://sites.google.com/view/aura-journals">
+      Home
+    </a>
+
+    <span>›</span>
+
+    <span>Mindset</span>
+
+    <span>›</span>
+
+    <span>Article 01</span>
+
+  </div>
+
+
+  <span class="article-category">
+    Mindset &amp; Perspective
+  </span>
+
+
+  <h1 class="article-title">
+    The Quiet Power of Intentional Thinking
+  </h1>
+
+
+  <p class="article-intro">
+    In a world filled with constant notifications, opinions and
+    competing priorities, intentional thinking offers a quieter
+    way to approach everyday decisions.
+  </p>
+
+
+  <div class="article-meta">
+
+    <span>Aura Journal Editorial</span>
+
+    <span>•</span>
+
+    <span>Mindset</span>
+
+    <span>•</span>
+
+    <span>2026</span>
+
+  </div>
+
+
+
+  <!-- VISUAL -->
+
+  <div class="article-visual">
+
+    <div class="visual-circle-one"></div>
+
+    <div class="visual-circle-two"></div>
+
+    <div class="visual-line"></div>
+
+    <div class="visual-text">
+      Intentional Living
+    </div>
+
+  </div>
+
+
+
+  <!-- CONTENT -->
+
+  <article class="article-content">
+
+
+    <p>
+      Intentional thinking does not require having every part of
+      life planned in advance. Instead, it is about creating enough
+      space between a situation and a response to decide what
+      actually deserves your attention.
+    </p>
+
+
+    <p>
+      Small decisions happen throughout the day. What deserves
+      your time? Which commitments are genuinely useful? What
+      habits are helping you move forward, and which ones are
+      simply consuming attention?
+    </p>
+
+
+    <h2>
+      Making Space Before Making Decisions
+    </h2>
+
+
+    <p>
+      One of the simplest aspects of intentional thinking is
+      learning to pause. A short pause can make it easier to
+      distinguish between something that feels urgent and something
+      that is actually important.
+    </p>
+
+
+    <p>
+      This does not mean becoming slow or indecisive. In many
+      situations, a clearer decision can actually save time because
+      fewer unnecessary changes are required later.
+    </p>
+
+
+    <div class="article-quote">
+
+      <p>
+        “Clarity often begins when we give ourselves enough space
+        to notice what really matters.”
+      </p>
+
+    </div>
+
+
+    <h2>
+      Turning Attention Into a Daily Practice
+    </h2>
+
+
+    <p>
+      Attention is one of the most limited resources in modern
+      life. The way it is used can influence how a day feels,
+      even when the actual schedule remains unchanged.
+    </p>
+
+
+    <p>
+      A useful starting point is to identify a few areas that
+      deserve consistent attention. These might include learning,
+      relationships, creative work, physical surroundings or
+      personal projects.
+    </p>
+
+
+    <h3>
+      A Simple Three-Step Framework
+    </h3>
+
+
+    <ul>
+
+      <li>
+        <strong>Pause:</strong>
+        Give yourself a moment before automatically responding.
+      </li>
+
+      <li>
+        <strong>Choose:</strong>
+        Decide whether the activity genuinely supports your
+        current priority.
+      </li>
+
+      <li>
+        <strong>Continue:</strong>
+        Once the choice is made, give the task your attention
+        rather than repeatedly reconsidering it.
+      </li>
+
+    </ul>
+
+
+    <h2>
+      Why Small Choices Matter
+    </h2>
+
+
+    <p>
+      Intentional living is rarely built through one dramatic
+      decision. More often, it develops through repeated small
+      choices. Choosing to read instead of endlessly scrolling,
+      organizing a workspace before beginning a project, or
+      protecting a quiet period in the morning can gradually
+      influence daily patterns.
+    </p>
+
+
+    <p>
+      The goal is not perfection. A useful routine should have
+      enough flexibility to adapt when circumstances change.
+      Intentionality simply provides a direction to return to.
+    </p>
+
+
+
+    <!-- =====================================================
+         CPA OFFER
+    ===================================================== -->
+
+    <section class="partner-offer">
+
+
+      <span class="offer-label">
+        Sponsored Opportunity
+      </span>
+
+
+      <h2>
+        Explore an Opportunity Available Online
+      </h2>
+
+
+      <p class="offer-text">
+        We've partnered with a third-party provider to make this
+        opportunity available to eligible visitors. Review the
+        information provided by the partner to see whether it
+        may be suitable for you.
+      </p>
+
+
+      <div class="offer-details">
+
+
+        <div class="offer-detail">
+
+          <span>✓</span>
+
+          <p>
+            Online access
+          </p>
+
+        </div>
+
+
+        <div class="offer-detail">
+
+          <span>✓</span>
+
+          <p>
+            Eligibility may vary
+          </p>
+
+        </div>
+
+
+        <div class="offer-detail">
+
+          <span>✓</span>
+
+          <p>
+            Partner terms may apply
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <a
+        href="YOUR-CPA-LINK-HERE"
+        target="_blank"
+        rel="nofollow sponsored noopener noreferrer"
+        class="offer-button">
+
+        View Offer Details
+
+        <span>→</span>
+
+      </a>
+
+
+      <p class="affiliate-disclosure">
+
+        <strong>Disclosure:</strong>
+        This page contains a sponsored/partner link. We may
+        receive compensation if you complete a qualifying action
+        through this link. The offer is provided by a third party
+        and its terms, eligibility, and availability may vary.
+
+      </p>
+
+
+    </section>
+
+
+
+    <!-- KEY TAKEAWAYS -->
+
+    <div class="takeaways">
+
+
+      <div class="takeaways-title">
+        Key Takeaways
+      </div>
+
+
+      <div class="takeaway">
+
+        <div class="takeaway-number">
+          01
+        </div>
+
+        <p>
+          A short pause can create more clarity before an
+          important decision.
+        </p>
+
+      </div>
+
+
+      <div class="takeaway">
+
+        <div class="takeaway-number">
+          02
+        </div>
+
+        <p>
+          Attention becomes more useful when it is connected
+          to meaningful priorities.
+        </p>
+
+      </div>
+
+
+      <div class="takeaway">
+
+        <div class="takeaway-number">
+          03
+        </div>
+
+        <p>
+          Small, consistent choices can shape broader everyday
+          patterns over time.
+        </p>
+
+      </div>
+
+
+      <div class="takeaway">
+
+        <div class="takeaway-number">
+          04
+        </div>
+
+        <p>
+          Intentional living is about direction and awareness,
+          not creating a perfect schedule.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <p>
+      Ultimately, intentional thinking is less about controlling
+      every outcome and more about becoming deliberate with the
+      choices that are within reach. A little more awareness can
+      make everyday routines feel clearer, calmer and more useful.
+    </p>
+
+
+  </article>
+
+
+
+  <!-- ARTICLE NAVIGATION -->
+
+  <div class="article-navigation">
+
+
+    <a
+      href="https://sites.google.com/view/aura-journals"
+      class="article-nav-link">
+
+      <span class="article-nav-label">
+        ← Back
+      </span>
+
+      <span class="article-nav-title">
+        Aura Journal Home
+      </span>
+
+    </a>
+
+
+    <a
+      href="mindset-2.html"
+      class="article-nav-link"
+      style="text-align:right;">
+
+      <span class="article-nav-label">
+        Next Article →
+      </span>
+
+      <span class="article-nav-title">
+        Continue Exploring Mindset
+      </span>
+
+    </a>
+
+
+  </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <div class="footer-inner">
+
+
+    <div class="footer-top">
+
+
+      <div class="footer-brand">
+
+
+        <a
+          href="https://sites.google.com/view/aura-journals"
+          class="logo">
+
+          Aura Journal<span>.</span>
+
+        </a>
+
+
+        <p>
+          A digital editorial collection exploring ideas,
+          inspiration and everyday aesthetics.
+        </p>
+
+
+      </div>
+
+
+      <div class="footer-links">
+
+
+        <a
+          href="https://sites.google.com/view/aura-journals/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Privacy Policy
+
+        </a>
+
+
+        <a
+          href="https://sites.google.com/view/aura-journals/terms-of-service"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Terms of Service
+
+        </a>
+
+
+        <a
+          href="https://sites.google.com/view/aura-journals/disclaimer"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Disclaimer
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Aura Journal. All rights reserved.
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MOBILE MENU JAVASCRIPT
+===================================================== -->
+
+<script>
+
+(function(){
+
+  const menuButton =
+    document.getElementById("menuButton");
+
+  const navigation =
+    document.getElementById("navigation");
+
+  const navItems =
+    document.querySelectorAll(".nav-item");
+
+  const navLinks =
+    document.querySelectorAll(".nav-link");
+
+
+  /* OPEN / CLOSE MAIN MENU */
+
+  menuButton.addEventListener(
+    "click",
+    function(){
+
+      const isOpen =
+        navigation.classList.toggle("open");
+
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close navigation"
+          : "Open navigation"
+      );
+
+
+      menuButton.textContent =
+        isOpen ? "×" : "☰";
+
+    }
+  );
+
+
+  /* MOBILE CATEGORY DROPDOWNS */
+
+  navLinks.forEach(
+    function(link){
+
+      link.addEventListener(
+        "click",
+        function(event){
+
+          if(window.innerWidth <= 980){
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            const item =
+              link.closest(".nav-item");
+
+
+            const alreadyOpen =
+              item.classList.contains("active");
+
+
+            navItems.forEach(
+              function(other){
+
+                other.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+            if(!alreadyOpen){
+
+              item.classList.add(
+                "active"
+              );
+
+            }
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+
+  /* CLOSE MENU AFTER ARTICLE CLICK */
+
+  document
+    .querySelectorAll(".dropdown a")
+    .forEach(
+      function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            if(window.innerWidth <= 980){
+
+              navigation.classList.remove(
+                "open"
+              );
+
+
+              navItems.forEach(
+                function(item){
+
+                  item.classList.remove(
+                    "active"
+                  );
+
+                }
+              );
+
+
+              menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+
+              menuButton.setAttribute(
+                "aria-label",
+                "Open navigation"
+              );
+
+
+              menuButton.textContent =
+                "☰";
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+  /* ESCAPE */
+
+  document.addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Escape"){
+
+        navigation.classList.remove(
+          "open"
+        );
+
+
+        navItems.forEach(
+          function(item){
+
+            item.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+
+        menuButton.setAttribute(
+          "aria-label",
+          "Open navigation"
+        );
+
+
+        menuButton.textContent =
+          "☰";
+
+      }
+
+    }
+  );
+
+
+  /* RESET WHEN RETURNING TO DESKTOP */
+
+  window.addEventListener(
+    "resize",
+    function(){
+
+      if(window.innerWidth > 980){
+
+        navigation.classList.remove(
+          "open"
+        );
+
+
+        navItems.forEach(
+          function(item){
+
+            item.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+
+        menuButton.textContent =
+          "☰";
+
+      }
+
+    }
+  );
+
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
