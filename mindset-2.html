@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>Daily Wisdom & Mindset Quotes — Aura Journal</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
+
+:root{
+  --bg:#0f131a;
+  --card:#161b22;
+  --card2:#1b212b;
+  --text:#f0f6fc;
+  --muted:#9aa4af;
+  --accent:#d29922;
+  --border:#30363d;
+  --max:840px;
+}
+
+*, *::before, *::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; padding:0; width:100%; min-width:0; overflow-x:hidden;
+  background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans',Arial,sans-serif; line-height:1.7;
+}
+a{ color:inherit; text-decoration:none; }
+button, a{ -webkit-tap-highlight-color:transparent; }
+
+/* Header Minimal */
+.site-header{
+  position:sticky; top:0; z-index:9999; width:100%;
+  background:rgba(15, 19, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+}
+.header-inner{
+  width:100%; max-width:1100px; height:70px; margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand-logo{
+  font-family:'Playfair Display',Georgia,serif; font-size:22px; font-weight:700; color:var(--text);
+}
+.brand-logo span{ color:var(--accent); }
+.back-home{
+  font-size:13px; font-weight:600; color:var(--muted); transition:color 0.2s;
+}
+.back-home:hover{ color:var(--accent); }
+
+/* Main Container */
+.container{
+  width:100%; max-width:var(--max); margin:0 auto; padding:40px 20px 60px;
+}
+
+/* Article Hero Section */
+.quote-hero{
+  text-align:center; margin-bottom:40px; padding:20px 0;
+}
+.category-badge{
+  display:inline-block; margin-bottom:12px; color:var(--accent); font-size:12px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; background:rgba(210, 153, 34, 0.1);
+  padding:6px 14px; border-radius:20px; border:1px solid rgba(210, 153, 34, 0.2);
+}
+.quote-hero h1{
+  font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px, 4vw, 40px);
+  line-height:1.3; margin:0 0 16px; color:var(--text);
+}
+.publish-info{
+  color:var(--muted); font-size:13px;
+}
+
+/* Featured Quote Box (Visual Anchor) */
+.featured-quote-card{
+  background:linear-gradient(145deg, var(--card), var(--card2));
+  border:1px solid var(--border); border-radius:18px; padding:36px;
+  text-align:center; margin-bottom:40px; box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+.featured-quote-card p{
+  font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px, 3vw, 24px);
+  line-height:1.5; color:var(--text); margin:0 0 16px;
+}
+.quote-author{
+  color:var(--accent); font-size:14px; font-weight:600; letter-spacing:.5px;
+}
+
+/* Content Body */
+.article-body{
+  font-size:16px; color:#c9d1d9; line-height:1.8; margin-bottom:40px;
+}
+.article-body p{ margin-bottom:24px; }
+.article-body h2{
+  font-family:'Playfair Display',Georgia,serif; font-size:24px; color:var(--text);
+  margin:36px 0 16px; border-bottom:1px solid var(--border); padding-bottom:8px;
+}
+
+/* High-Converting Offer Card (CPA Bridge Section) */
+.offer-box{
+  background:var(--card); border:2px solid var(--accent); border-radius:16px;
+  padding:32px; text-align:center; margin:40px 0; position:relative;
+  box-shadow:0 0 30px rgba(210, 153, 34, 0.12);
+}
+.offer-tag{
+  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+  background:var(--accent); color:var(--bg); font-size:11px; font-weight:700;
+  text-transform:uppercase; padding:4px 14px; border-radius:20px; letter-spacing:1px;
+}
+.offer-box h3{
+  font-family:'Playfair Display',Georgia,serif; font-size:22px; margin:10px 0 12px; color:var(--text);
+}
+.offer-box p{
+  color:var(--muted); font-size:14px; margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto;
+}
+.cta-btn{
+  display:inline-block; width:100%; max-width:320px; padding:14px 24px;
+  background:var(--accent); color:var(--bg); font-weight:700; font-size:15px;
+  border-radius:10px; text-align:center; transition:transform 0.2s, opacity 0.2s;
+  box-shadow:0 4px 15px rgba(210, 153, 34, 0.3);
+}
+.cta-btn:hover{
+  opacity:0.92; transform:translateY(-2px);
+}
+
+/* Footer */
+.site-footer{
+  width:100%; margin-top:60px; padding:30px 20px; border-top:1px solid var(--border);
+  background:var(--card); color:var(--muted); text-align:center; font-size:12px;
+}
+
+@media(max-width:600px){
+  .featured-quote-card{ padding:24px 18px; }
+  .offer-box{ padding:24px 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-logo">Aura Journal<span>.</span></a>
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="quote-hero">
+    <span class="category-badge">Mindset &amp; Philosophy</span>
+    <h1>The Quiet Power of Intentional Words: How Daily Quotes Shape Reality</h1>
+    <div class="publish-info">Curated by Aura Editorial • 4 min read</div>
+  </div>
+
+  <!-- Visual Quote Card -->
+  <div class="featured-quote-card">
+    <p>&ldquo;The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks.&rdquo;</p>
+    <div class="quote-author">— Mark Twain</div>
+  </div>
+
+  <div class="article-body">
+    <p>We often underestimate the psychological impact of the words we consume during our morning routine. In a digital world crowded with endless noise, anchoring your focus with a single, profound quote can completely rewire your daily momentum.</p>
+    
+    <h2>Why Micro-Wisdom Works</h2>
+    <p>Behavioral research shows that the human brain responds remarkably well to concise, high-impact statements (micro-wisdom). Instead of overwhelming your mind with long essays first thing in the morning, a powerful philosophical reminder creates mental clarity and emotional resilience.</p>
+    
+    <p>When you align your environment with intentional design and purposeful thoughts, decision fatigue drops significantly, allowing you to execute your daily goals with razor-sharp precision.</p>
+  </div>
+
+  <!-- High CVR Offer / Bridge Box -->
+  <div class="offer-box">
+    <div class="offer-tag">Exclusive Resource</div>
+    <h3>Unlock the Full 365-Day Daily Wisdom Vault</h3>
+    <p>Get instant digital access to our premium curated framework of daily mindset triggers, high-performance habits, and growth guides.</p>
+    
+    <!-- Yahan apna CPA link ya offer link lagana hai -->
+    <a href="YOUR_CPA_OR_OFFER_LINK_HERE" class="cta-btn" target="_blank" rel="noopener">Access Free Guide Now →</a>
+  </div>
+
+  <div class="article-body" style="margin-top: 40px;">
+    <h2>Implementing Rituals Into Action</h2>
+    <p>Reading a quote is only the first step. True transformation happens when reflection turns into execution. Take five minutes today to write down your core focus, eliminate distractions, and watch how your productivity transforms.</p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  &copy; 2026 Aura Journal. All rights reserved.
+</footer>
+
+</body>
+</html>
