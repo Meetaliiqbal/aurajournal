@@ -3,159 +3,690 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Partner Hub &amp; Curated Collections — Aura Journal</title>
+<meta name="referrer" content="no-referrer">
+
+<title>Partner Hub — Curated Resources &amp; Collections</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
 
 :root{
-  --bg:#fcfcfc;
+  --bg:#fcfcfb;
   --surface:#ffffff;
-  --text:#121212;
-  --muted:#666666;
+  --soft:#f7f5f0;
+  --text:#171717;
+  --muted:#6b6b68;
   --accent:#8a6522;
-  --border:#eaeaea;
-  --max:900px;
+  --accent-dark:#6f511b;
+  --border:#e7e5df;
+  --max:920px;
 }
 
-*, *::before, *::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
 body{
-  margin:0; padding:0; width:100%; background:var(--bg); color:var(--text);
-  font-family:'Plus Jakarta Sans',sans-serif; line-height:1.85;
+  margin:0;
+  padding:0;
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Plus Jakarta Sans',Arial,sans-serif;
+  line-height:1.75;
 }
 
-/* Hub Container */
+a{
+  color:inherit;
+  text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .hub-container{
-  width:100%; max-width:var(--max); margin:0 auto; padding:60px 20px 90px;
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:62px 22px 85px;
 }
 
-/* Hub Header */
+
+/* =========================
+   HERO
+========================= */
+
 .hub-header{
-  text-align:center; margin-bottom:50px;
-  border-bottom:1px solid var(--border); padding-bottom:36px;
+  text-align:center;
+  margin-bottom:42px;
 }
+
 .hub-tag{
-  color:var(--accent); font-size:11.5px; font-weight:700; letter-spacing:2.5px;
-  text-transform:uppercase; margin-bottom:14px; display:inline-block;
-  background:rgba(138, 101, 34, 0.08); padding:6px 16px; border-radius:20px;
-  border:1px solid rgba(138, 101, 34, 0.2);
+  display:inline-block;
+  margin-bottom:16px;
+  padding:7px 15px;
+
+  background:#f5f1e8;
+  border:1px solid #e7ddc9;
+  border-radius:30px;
+
+  color:var(--accent);
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
+
 .hub-header h1{
-  font-family:'Playfair Display',serif; font-size:clamp(32px, 5vw, 44px);
-  font-weight:700; margin:0 0 16px; color:var(--text); line-height:1.2;
+  max-width:700px;
+  margin:0 auto 15px;
+
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(36px,5vw,52px);
+  line-height:1.16;
+  font-weight:600;
+  letter-spacing:-.4px;
 }
+
 .hub-header p{
-  color:var(--muted); font-size:16px; max-width:600px; margin:0 auto; line-height:1.7;
+  max-width:650px;
+  margin:0 auto;
+
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.8;
 }
 
-/* Category Grid */
+
+/* =========================
+   INTRO NOTE
+========================= */
+
+.hub-intro{
+  max-width:720px;
+  margin:0 auto 30px;
+
+  padding:18px 20px;
+
+  background:var(--soft);
+  border:1px solid var(--border);
+  border-radius:12px;
+
+  text-align:center;
+  color:#696762;
+  font-size:12px;
+  line-height:1.65;
+}
+
+
+/* =========================
+   SECTION LABEL
+========================= */
+
+.collection-heading{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.collection-heading h2{
+  margin:0 0 5px;
+
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:27px;
+  line-height:1.25;
+  font-weight:500;
+}
+
+.collection-heading p{
+  margin:0;
+
+  color:var(--muted);
+  font-size:12px;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
 .category-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:17px;
 }
-.offer-card{
-  background:var(--surface); border:1.5px solid var(--border); border-radius:16px;
-  padding:30px 24px; text-align:center; transition:all 0.25s ease;
-  box-shadow:0 4px 20px rgba(0,0,0,0.02); display:flex; flex-direction:column; justify-content:space-between;
-}
-.offer-card:hover{
-  border-color:var(--accent); transform:translateY(-3px); box-shadow:0 8px 30px rgba(138,101,34,0.06);
-}
-.offer-category{
-  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent); margin-bottom:8px; display:block;
-}
-.offer-card h3{
-  font-family:'Playfair Display',serif; font-size:20px; color:var(--text); margin:0 0 10px; font-weight:600;
-}
-.offer-card p{
-  color:var(--muted); font-size:14px; margin:0 0 24px; line-height:1.6;
-}
-.offer-btn{
-  display:block; background:var(--text); color:#ffffff; font-size:13.5px;
-  font-weight:600; padding:12px 20px; border-radius:10px; transition:all 0.2s ease;
-  text-decoration:none; text-align:center;
-}
-.offer-btn:hover{ background:var(--accent); color:#ffffff; }
 
-@media(max-width:768px){
-  .hub-container{ padding:40px 16px 70px; }
-  .hub-header{ margin-bottom:36px; padding-bottom:26px; }
+
+/* =========================
+   OFFER CARD
+========================= */
+
+.offer-card{
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  min-height:245px;
+  padding:27px 25px 23px;
+
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:15px;
+
+  box-shadow:0 5px 24px rgba(20,20,15,.025);
+
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease;
+}
+
+.offer-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:25px;
+  right:25px;
+  height:2px;
+
+  background:transparent;
+  border-radius:0 0 4px 4px;
+
+  transition:background .22s ease;
+}
+
+.offer-card:hover{
+  transform:translateY(-3px);
+  border-color:#d9d4c7;
+  box-shadow:0 12px 32px rgba(30,28,20,.055);
+}
+
+.offer-card:hover::before{
+  background:var(--accent);
+}
+
+
+/* =========================
+   CARD CATEGORY
+========================= */
+
+.offer-category{
+  display:block;
+  margin-bottom:8px;
+
+  color:var(--accent);
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+}
+
+.offer-card h3{
+  margin:0 0 10px;
+
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:23px;
+  line-height:1.25;
+  font-weight:500;
+  color:var(--text);
+}
+
+.offer-card p{
+  margin:0 0 23px;
+
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.7;
+}
+
+
+/* =========================
+   CARD LINK
+========================= */
+
+.offer-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+
+  width:100%;
+  padding:12px 16px;
+
+  background:#171717;
+  color:#ffffff;
+
+  border-radius:8px;
+
+  font-size:11.5px;
+  font-weight:600;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.offer-btn span{
+  transition:transform .2s ease;
+}
+
+.offer-btn:hover{
+  background:var(--accent);
+  color:#ffffff;
+}
+
+.offer-btn:hover span{
+  transform:translateX(3px);
+}
+
+
+/* =========================
+   BOTTOM NOTE
+========================= */
+
+.hub-note{
+  max-width:680px;
+  margin:28px auto 0;
+
+  text-align:center;
+
+  color:#85847e;
+  font-size:10.5px;
+  line-height:1.65;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  .hub-container{
+    padding:42px 16px 65px;
+  }
+
+  .hub-header{
+    margin-bottom:30px;
+  }
+
+  .hub-tag{
+    font-size:9.5px;
+    letter-spacing:1.6px;
+    padding:6px 13px;
+  }
+
+  .hub-header h1{
+    font-size:35px;
+  }
+
+  .hub-header p{
+    font-size:13px;
+  }
+
+  .hub-intro{
+    padding:15px 16px;
+    font-size:11.5px;
+    margin-bottom:27px;
+  }
+
+  .collection-heading{
+    margin-bottom:18px;
+  }
+
+  .collection-heading h2{
+    font-size:25px;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+    gap:13px;
+  }
+
+  .offer-card{
+    min-height:0;
+    padding:24px 21px 21px;
+  }
+
+  .offer-card h3{
+    font-size:22px;
+  }
+
+  .offer-card p{
+    font-size:12.5px;
+  }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:380px){
+
+  .hub-container{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .hub-header h1{
+    font-size:31px;
+  }
+
+  .offer-card{
+    padding:22px 19px 19px;
+  }
+
+  .offer-card h3{
+    font-size:20px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-  <!-- Header Script Injection -->
-  <script src="header.js" defer></script>
 
-  <!-- Hub Main Container -->
-  <main class="hub-container">
-    
-    <header class="hub-header">
-      <span class="hub-tag">Curated Collections &amp; Partners</span>
-      <h1>Explore Our Partner Hub</h1>
-      <p>Discover handpicked brands, exclusive recommendations, and daily rewards tailored to your mindful lifestyle and favorite aesthetics.</p>
-    </header>
+<!-- =========================
+     SHARED HEADER
+========================= -->
 
-    <div class="category-grid">
-      
-      <!-- Fashion Offer (SHEIN) -->
-      <div class="offer-card">
-        <div>
-          <span class="offer-category">Fashion &amp; Style</span>
-          <h3>SHEIN Collections</h3>
-          <p>Explore seasonal capsule wardrobes, linen staples, and trendsetting apparel pieces.</p>
-        </div>
-        <a href="YOUR_SHEIN_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="offer-btn">Shop SHEIN Collection →</a>
-      </div>
+<script src="header.js" defer></script>
 
-      <!-- Home Decor Offer (Amazon) -->
-      <div class="offer-card">
-        <div>
-          <span class="offer-category">Home Decor &amp; Living</span>
-          <h3>Amazon Home Finds</h3>
-          <p>Transform your living spaces with curated tabletop aesthetics, linens, and decor essentials.</p>
-        </div>
-        <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="offer-btn">Shop Amazon Picks →</a>
-      </div>
 
-      <!-- Travel & Nature Offer (Priceline) -->
-      <div class="offer-card">
-        <div>
-          <span class="offer-category">Travel &amp; Escapes</span>
-          <h3>Priceline Stays</h3>
-          <p>Plan your next remote cabin retreat or coastal getaway with exclusive travel deals.</p>
-        </div>
-        <a href="YOUR_PRICELINE_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="offer-btn">Explore Priceline →</a>
-      </div>
+<main class="hub-container">
 
-      <!-- Food Offer (DoorDash) -->
-      <div class="offer-card">
-        <div>
-          <span class="offer-category">Culinary &amp; Dining</span>
-          <h3>DoorDash Delivery</h3>
-          <p>Enjoy gourmet dining experiences and fresh local meals delivered straight to your door.</p>
-        </div>
-        <a href="YOUR_DOORDASH_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="offer-btn">Order DoorDash →</a>
-      </div>
 
-      <!-- Quotes / Rewards Offer (Cash / CPA) -->
-      <div class="offer-card">
-        <div>
-          <span class="offer-category">Daily Rewards</span>
-          <h3>Exclusive Perks &amp; Rewards</h3>
-          <p>Unlock special member benefits, daily wellness rewards, and exclusive offers.</p>
-        </div>
-        <a href="YOUR_CASH_OFFER_LINK" target="_blank" rel="nofollow noopener" class="offer-btn">Claim Rewards →</a>
-      </div>
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hub-header">
+
+    <span class="hub-tag">
+      Partner Hub
+    </span>
+
+    <h1>
+      Explore Curated Resources
+    </h1>
+
+    <p>
+      Browse selected collections across style, home, travel, food,
+      nature, and everyday resources.
+    </p>
+
+  </header>
+
+
+  <!-- =========================
+       INTRO NOTE
+  ========================= -->
+
+  <div class="hub-intro">
+    Explore a category below to view its dedicated collection and
+    available resources.
+  </div>
+
+
+  <!-- =========================
+       COLLECTIONS
+  ========================= -->
+
+  <section>
+
+    <div class="collection-heading">
+
+      <h2>
+        Browse by Category
+      </h2>
+
+      <p>
+        Select a collection to continue.
+      </p>
 
     </div>
 
-  </main>
 
-  <!-- Footer Script Injection -->
-  <script src="footer.js" defer></script>
+    <div class="category-grid">
+
+
+      <!-- =====================
+           01 — FASHION
+      ====================== -->
+
+      <article class="offer-card">
+
+        <div>
+
+          <span class="offer-category">
+            Fashion &amp; Style
+          </span>
+
+          <h3>
+            Style Collections
+          </h3>
+
+          <p>
+            Explore seasonal clothing, wardrobe essentials,
+            everyday styling ideas, and selected fashion resources.
+          </p>
+
+        </div>
+
+        <a
+          href="fashion-offer.html"
+          class="offer-btn"
+        >
+          Explore Fashion <span>→</span>
+        </a>
+
+      </article>
+
+
+      <!-- =====================
+           02 — HOME
+      ====================== -->
+
+      <article class="offer-card">
+
+        <div>
+
+          <span class="offer-category">
+            Home &amp; Decor
+          </span>
+
+          <h3>
+            Home Collections
+          </h3>
+
+          <p>
+            Discover interior accents, practical essentials,
+            decorative ideas, and selected home resources.
+          </p>
+
+        </div>
+
+        <a
+          href="homeperks.html"
+          class="offer-btn"
+        >
+          Explore Home <span>→</span>
+        </a>
+
+      </article>
+
+
+      <!-- =====================
+           03 — TRAVEL
+      ====================== -->
+
+      <article class="offer-card">
+
+        <div>
+
+          <span class="offer-category">
+            Travel &amp; Escapes
+          </span>
+
+          <h3>
+            Travel Collections
+          </h3>
+
+          <p>
+            Explore destination ideas, accommodation resources,
+            getaway inspiration, and travel selections.
+          </p>
+
+        </div>
+
+        <a
+          href="travelperks.html"
+          class="offer-btn"
+        >
+          Explore Travel <span>→</span>
+        </a>
+
+      </article>
+
+
+      <!-- =====================
+           04 — FOOD
+      ====================== -->
+
+      <article class="offer-card">
+
+        <div>
+
+          <span class="offer-category">
+            Food &amp; Dining
+          </span>
+
+          <h3>
+            Food Collections
+          </h3>
+
+          <p>
+            Discover meal inspiration, dining resources,
+            culinary ideas, and selected food-related collections.
+          </p>
+
+        </div>
+
+        <a
+          href="foodperks.html"
+          class="offer-btn"
+        >
+          Explore Food <span>→</span>
+        </a>
+
+      </article>
+
+
+      <!-- =====================
+           05 — NATURE
+      ====================== -->
+
+      <article class="offer-card">
+
+        <div>
+
+          <span class="offer-category">
+            Nature &amp; Outdoors
+          </span>
+
+          <h3>
+            Nature Collections
+          </h3>
+
+          <p>
+            Explore outdoor inspiration, scenic experiences,
+            nature resources, and ideas for getting outside.
+          </p>
+
+        </div>
+
+        <a
+          href="natureperks.html"
+          class="offer-btn"
+        >
+          Explore Nature <span>→</span>
+        </a>
+
+      </article>
+
+
+      <!-- =====================
+           06 — EVERYDAY
+      ====================== -->
+
+      <article class="offer-card">
+
+        <div>
+
+          <span class="offer-category">
+            Everyday Resources
+          </span>
+
+          <h3>
+            Selected Resources
+          </h3>
+
+          <p>
+            Browse additional resources, useful selections,
+            and currently available opportunities.
+          </p>
+
+        </div>
+
+        <a
+          href="offers.html"
+          class="offer-btn"
+        >
+          Explore Resources <span>→</span>
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BOTTOM NOTE
+  ========================= -->
+
+  <p class="hub-note">
+    Information, availability, eligibility, pricing, and other details
+    may vary by provider and location. Please review the applicable
+    information on each destination page.
+  </p>
+
+
+</main>
+
+
+<!-- =========================
+     SHARED FOOTER
+========================= -->
+
+<script src="footer.js" defer></script>
+
 
 </body>
 </html>

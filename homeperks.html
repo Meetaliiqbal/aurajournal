@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+
+<title>Home &amp; Living Finds</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  --bg:#fbfaf7;
+  --surface:#ffffff;
+  --soft:#f2f5ef;
+  --text:#20231f;
+  --muted:#686d65;
+  --accent:#5b704f;
+  --accent-dark:#475a3e;
+  --border:#e2e5de;
+  --max:720px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',Arial,sans-serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+#site-header,
+header,
+#site-footer,
+footer{
+  width:100%;
+}
+
+.page{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 22px 80px;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.eyebrow{
+  display:inline-block;
+  margin-bottom:15px;
+  padding:6px 13px;
+  background:#f0f3ed;
+  border:1px solid #dce3d7;
+  border-radius:30px;
+  color:var(--accent);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+.intro h1{
+  margin:0 0 15px;
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:clamp(28px,4vw,38px);
+  line-height:1.25;
+  font-weight:400;
+}
+
+.intro p{
+  max-width:580px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.8;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:0 12px 40px rgba(35,42,30,.045);
+  padding:35px;
+}
+
+.card-content{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.card-content h2{
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:22px;
+  font-weight:400;
+  margin:0 0 10px;
+}
+
+.card-content p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  margin:0;
+}
+
+.info-box{
+  background:var(--soft);
+  border:1px solid #dbe3d5;
+  border-radius:12px;
+  padding:16px;
+  text-align:left;
+  margin-bottom:25px;
+}
+
+.info-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:12.5px;
+  color:#4a5046;
+  margin-bottom:10px;
+  line-height:1.5;
+}
+
+.info-item:last-child{
+  margin-bottom:0;
+}
+
+.info-bullet{
+  color:var(--accent);
+  font-weight:700;
+  font-size:15px;
+  line-height:1;
+}
+
+.cta{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:16px 20px;
+  background:var(--accent);
+  color:#ffffff;
+  border-radius:8px;
+  font-size:13.5px;
+  font-weight:600;
+  transition:background .2s ease,transform .2s ease;
+  box-shadow:0 4px 12px rgba(91,112,79,.2);
+}
+
+.cta:hover{
+  background:var(--accent-dark);
+  transform:translateY(-1px);
+}
+
+.cta svg{
+  transition:transform .2s ease;
+}
+
+.cta:hover svg{
+  transform:translateX(3px);
+}
+
+.external-note{
+  margin:14px 0 0;
+  text-align:center;
+  color:#858b82;
+  font-size:10px;
+  line-height:1.5;
+}
+
+.disclosure{
+  max-width:600px;
+  margin:24px auto 0;
+  text-align:center;
+  color:#858981;
+  font-size:10px;
+  line-height:1.6;
+}
+
+@media(max-width:650px){
+
+  .page{
+    padding:35px 15px 50px;
+  }
+
+  .card{
+    padding:24px 20px;
+  }
+
+  .intro h1{
+    font-size:29px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SHARED HEADER -->
+<script src="header.js" defer></script>
+
+
+<main class="page">
+
+  <section class="intro">
+
+    <span class="eyebrow">
+      Home &amp; Living Finds
+    </span>
+
+    <h1>
+      Explore Home &amp; Decor Finds
+    </h1>
+
+    <p>
+      Discover useful home essentials, decorative accents, everyday furnishings,
+      and ideas for creating a comfortable and welcoming space.
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <div class="card-content">
+
+      <h2>
+        Ready to explore new finds?
+      </h2>
+
+      <p>
+        Review the information below and continue to the partner page to explore
+        available home and living selections.
+      </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="info-item">
+        <span class="info-bullet">•</span>
+        <span>
+          Explore home decor, organization ideas, furnishings, and everyday essentials.
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-bullet">•</span>
+        <span>
+          Browse selected home and living products through the destination page.
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-bullet">•</span>
+        <span>
+    Availability is limited to shoppers in the US, UK, AU &amp; CA.
+        </span>
+      </div>
+
+    </div>
+
+
+    <!-- AMAZON CPA / AFFILIATE LINK -->
+
+    <a
+      href="https://linkthem.net/aff_c?offer_id=340&aff_id=2281"
+      class="cta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <span>
+        Explore Home &amp; Decor Finds
+      </span>
+
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <line
+          x1="5"
+          y1="12"
+          x2="19"
+          y2="12"
+        ></line>
+
+        <polyline
+          points="12 5 19 12 12 19"
+        ></polyline>
+
+      </svg>
+
+    </a>
+
+
+    <p class="external-note">
+      Notice: You are leaving this website to visit an independent external
+      shopping page. Product details, pricing, and availability are provided
+      by the third-party retailer.
+    </p>
+
+  </section>
+
+
+  <p class="disclosure">
+    Independent home and living resource page. Product information, pricing,
+    availability, and promotional details may vary and are provided by
+    third-party retailers.
+  </p>
+
+</main>
+
+
+<!-- SHARED FOOTER -->
+<script src="footer.js" defer></script>
+
+</body>
+</html>

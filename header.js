@@ -106,3 +106,27 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleBtn.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
 });
+// Favicon
+if (!document.querySelector('link[data-site-favicon]')) {
+  const favicon = document.createElement('link');
+
+  favicon.rel = 'icon';
+  favicon.type = 'image/svg+xml';
+  favicon.setAttribute('data-site-favicon', 'true');
+
+  favicon.href = 'data:image/svg+xml,' + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <rect width="64" height="64" rx="14" fill="#171717"/>
+      <text
+        x="32"
+        y="43"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="38"
+        fill="#ffffff"
+      >A</text>
+    </svg>
+  `);
+
+  document.head.appendChild(favicon);
+}

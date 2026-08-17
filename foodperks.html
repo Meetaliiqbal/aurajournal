@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+
+<title>Food &amp; Dining Offers</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+  --bg:#fbfaf7;
+  --surface:#ffffff;
+  --soft:#f2f5ef;
+  --text:#20231f;
+  --muted:#686d65;
+  --accent:#8a5a3b;
+  --accent-dark:#70482f;
+  --border:#e2e5de;
+  --max:720px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  width:100%;
+  min-width:0;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',Arial,sans-serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+#site-header,
+header,
+#site-footer,
+footer{
+  width:100%;
+}
+
+.page{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:58px 22px 80px;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.eyebrow{
+  display:inline-block;
+  margin-bottom:15px;
+  padding:6px 13px;
+  background:#f5eee8;
+  border:1px solid #e7d9ce;
+  border-radius:30px;
+  color:var(--accent);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+.intro h1{
+  margin:0 0 15px;
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:clamp(28px,4vw,38px);
+  line-height:1.25;
+  font-weight:400;
+}
+
+.intro p{
+  max-width:580px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.8;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:0 12px 40px rgba(35,42,30,.045);
+  padding:35px;
+}
+
+.card-content{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.card-content h2{
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:22px;
+  font-weight:400;
+  margin:0 0 10px;
+}
+
+.card-content p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  margin:0;
+}
+
+.info-box{
+  background:var(--soft);
+  border:1px solid #dbe3d5;
+  border-radius:12px;
+  padding:16px;
+  text-align:left;
+  margin-bottom:25px;
+}
+
+.info-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:12.5px;
+  color:#4a5046;
+  margin-bottom:10px;
+  line-height:1.5;
+}
+
+.info-item:last-child{
+  margin-bottom:0;
+}
+
+.info-bullet{
+  color:var(--accent);
+  font-weight:700;
+  font-size:15px;
+  line-height:1;
+}
+
+.cta{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:16px 20px;
+  background:var(--accent);
+  color:#ffffff;
+  border-radius:8px;
+  font-size:13.5px;
+  font-weight:600;
+  transition:background .2s ease, transform .2s ease;
+  box-shadow:0 4px 12px rgba(138,90,59,.2);
+}
+
+.cta:hover{
+  background:var(--accent-dark);
+  transform:translateY(-1px);
+}
+
+.cta svg{
+  transition:transform .2s ease;
+}
+
+.cta:hover svg{
+  transform:translateX(3px);
+}
+
+.external-note{
+  margin:14px 0 0;
+  text-align:center;
+  color:#858b82;
+  font-size:10px;
+  line-height:1.5;
+}
+
+.disclosure{
+  max-width:600px;
+  margin:24px auto 0;
+  text-align:center;
+  color:#858981;
+  font-size:10px;
+  line-height:1.6;
+}
+
+@media(max-width:650px){
+
+  .page{
+    padding:35px 15px 50px;
+  }
+
+  .card{
+    padding:24px 20px;
+  }
+
+  .intro h1{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SHARED HEADER -->
+<script src="header.js" defer></script>
+
+
+<main class="page">
+
+  <section class="intro">
+
+    <span class="eyebrow">
+      Food &amp; Dining Guide
+    </span>
+
+    <h1>
+      Explore Food &amp; Dining Options
+    </h1>
+
+    <p>
+      Discover convenient dining options, meal ideas, local food selections,
+      and useful resources for enjoying your next meal.
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <div class="card-content">
+
+      <h2>
+        Looking for something good to eat?
+      </h2>
+
+      <p>
+        Review the information below and continue to the partner page to
+        explore available dining and delivery options.
+      </p>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <div class="info-item">
+        <span class="info-bullet">•</span>
+        <span>
+          Discover convenient meal and dining options available through the
+          destination service.
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-bullet">•</span>
+        <span>
+          Explore available restaurants, meals, and delivery options in your
+          area.
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-bullet">•</span>
+        <span>
+          Availability and eligibility may vary by location, including the
+          US, UK, AU &amp; CA.
+        </span>
+      </div>
+
+    </div>
+
+
+    <!-- YOUR FOOD / DOORDASH CPA LINK -->
+    <a
+      href="https://linkthem.net/aff_c?offer_id=455&aff_id=2281"
+      class="cta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <span>
+        Explore Dining Options
+      </span>
+
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+
+        <line
+          x1="5"
+          y1="12"
+          x2="19"
+          y2="12"
+        ></line>
+
+        <polyline
+          points="12 5 19 12 12 19"
+        ></polyline>
+
+      </svg>
+
+    </a>
+
+
+    <p class="external-note">
+      Notice: You are leaving this site to visit an independent external
+      partner page. Restaurant availability, delivery options, pricing,
+      and other details are provided by the third-party service.
+    </p>
+
+  </section>
+
+
+  <p class="disclosure">
+    Independent food and dining resource directory. Restaurant availability,
+    pricing, delivery options, promotional details, and eligibility may vary
+    by location and are provided by third-party partners.
+  </p>
+
+</main>
+
+
+<!-- SHARED FOOTER -->
+<script src="footer.js" defer></script>
+
+</body>
+</html>
