@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     .brand-logo span { color: #8a6522; }
 
-    /* Navigation Menu */
     .header-nav {
       display: flex; align-items: center; gap: 18px; font-size: 13.5px; font-weight: 500; color: #666666;
     }
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     .header-nav .highlight-btn:hover { background: #8a6522; }
 
-    /* Hamburger Button (Hidden on Desktop) */
     .menu-toggle {
       display: none; background: none; border: none; cursor: pointer;
       flex-direction: column; justify-content: space-between; width: 26px; height: 20px; padding: 0; z-index: 1001;
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
       display: block; width: 100%; height: 2.5px; background: #121212; border-radius: 2px; transition: all 0.3s ease;
     }
 
-    /* Mobile Responsive Styles */
     @media (max-width: 850px) {
       .menu-toggle { display: flex; }
       .header-nav {
@@ -48,14 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       .header-nav.active { right: 0; }
       .header-nav a { font-size: 16px; font-weight: 600; }
-      
-      /* Hamburger Animation to 'X' */
+
       .menu-toggle.active span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
       .menu-toggle.active span:nth-child(2) { opacity: 0; }
       .menu-toggle.active span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
     }
 
-    /* Overlay Background when menu is open */
     .menu-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
       background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
@@ -67,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="brand-logo">Aura Journal<span>.</span></a>
-      
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -85,27 +80,41 @@ document.addEventListener("DOMContentLoaded", function () {
       </nav>
     </div>
   </header>
+
   <div class="menu-overlay" id="menuOverlay"></div>
   `;
 
-  // Inject header at the very beginning of body
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
-  // Toggle Functionality
   const toggleBtn = document.getElementById("menuToggle");
   const navMenu = document.getElementById("headerNav");
   const overlay = document.getElementById("menuOverlay");
 
   function toggleMenu() {
-    toggleBtn.classList.toggle("active");
-    navMenu.classList.toggle("active");
-    overlay.classList.toggle("active");
-    document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
+    const isOpen = navMenu.classList.toggle("active");
+
+    toggleBtn.classList.toggle("active", isOpen);
+    overlay.classList.toggle("active", isOpen);
+    toggleBtn.setAttribute("aria-expanded", String(isOpen));
+
+    document.body.style.overflow = isOpen ? "hidden" : "";
   }
 
   toggleBtn.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
+
+  // Adsterra Social Bar
+  if (!document.querySelector('script[data-adsterra-social-bar]')) {
+    const adScript = document.createElement("script");
+
+    adScript.src = "https://pl31731624.profitableratecpmnetwork.com/8f/07/8f/8f078fc49a62b0135b4442d5b63e2dae.js";
+    adScript.async = true;
+    adScript.setAttribute("data-adsterra-social-bar", "true");
+
+    document.body.appendChild(adScript);
+  }
 });
+
 // Favicon
 if (!document.querySelector('link[data-site-favicon]')) {
   const favicon = document.createElement('link');
